@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Socialite\GithubAuthController;
+use App\Http\Controllers\Socialite\SocialLogin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,8 +21,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::prefix('github')->name('github.')->controller(GithubAuthController::class)->group(function () {
-    Route::get('/auth/github', 'redirectToGithub')->name('auth.github');
-    Route::get('/auth/github/callback', 'handleGithubCallback')->name('auth.github.callback');
-});
+Route::get('/auth/{provider}/redirect', [SocialLogin::class, 'redirect'])->name('social.redirect');
+Route::get('/auth/{provider}/callback', [SocialLogin::class, 'callback']);

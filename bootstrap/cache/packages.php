@@ -77,4 +77,11 @@
       0 => 'Nwidart\\Modules\\LaravelModulesServiceProvider',
     ),
   ),
+  'socialiteproviders/manager' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'SocialiteProviders\\Manager\\ServiceProvider',
+    ),
+  ),
 );

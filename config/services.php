@@ -53,4 +53,21 @@ return [
         'redirect' => env('GITHUB_REDIRECT_URI'),
     ],
 
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT_URI'),
+    ],
+
+    'apple' => [
+        'client_id' => env('APPLE_CLIENT_ID'),
+        'client_secret' => env('APPLE_CLIENT_SECRET'),
+        'redirect' => env('APPLE_REDIRECT_URI')
+    ],
+
+    'dribbble' => [
+        'client_id' => env('DRIBBBLE_CLIENT_ID'),
+        'client_secret' => env('DRIBBBLE_CLIENT_SECRET'),
+        'redirect' => env('DRIBBBLE_REDIRECT_URI')
+    ],
 ];

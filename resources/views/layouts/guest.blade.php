@@ -10,6 +10,31 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<style>
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 6px;
+        color: white;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+
+    .social-btn i,
+    .social-btn svg {
+        margin-right: 10px;
+    }
+
+    .social-btn:hover {
+        opacity: 0.9;
+    }
+
+</style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
