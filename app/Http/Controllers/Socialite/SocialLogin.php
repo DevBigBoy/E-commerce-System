@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Socialite;
 
+use App\Enums\UserStatus;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -35,11 +36,13 @@ class SocialLogin extends Controller
                     'provider_id' => $socialUser->getId(),
                 ],
                 [
-                    'name' => $socialUser->getName(),
+                    'first_name' => $socialUser->getName(),
+                    'last_name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                     'provider_token' => $socialUser->token,
                     'password' => Hash::make($randomPassword),
                     'email_verified_at' => now(),
+                    'status' => UserStatus::ACTIVE,
                 ]
             );
 

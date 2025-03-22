@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\UserStatus;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -36,8 +37,10 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->name,
+            'last_name' => $request->name,
             'email' => $request->email,
+            'status' => UserStatus::ACTIVE,
             'password' => Hash::make($request->password),
         ]);
 
